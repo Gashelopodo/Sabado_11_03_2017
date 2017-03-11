@@ -1,5 +1,6 @@
 package gashe.com.app_viewpage;
 
+import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -18,6 +19,25 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+
+        Intent sendIntent = new Intent();
+        sendIntent.setAction(Intent.ACTION_SEND);
+        sendIntent.putExtra(Intent.EXTRA_TEXT, "This is my text to send.");
+        sendIntent.setType("text/plain");
+        sendIntent.setPackage("com.whatsapp");
+
+        try {
+            startActivity(sendIntent);
+        }catch (Exception e){
+
+        }
+
+
+
+
+
 
         viewPager = (ViewPager)findViewById(R.id.myViewPager);
         myPagerAdapter = new MyPagerAdapter(getSupportFragmentManager());
