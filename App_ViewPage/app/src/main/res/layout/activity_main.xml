@@ -13,7 +13,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:tabGravity="fill"
-        android:id="@+id/tabLayout">
+        android:id="@+id/tabLayout"
+        style="@style/NavigationTab">
     </android.support.design.widget.TabLayout>
 
     <android.support.v4.view.ViewPager
